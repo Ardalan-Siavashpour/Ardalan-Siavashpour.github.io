@@ -1,35 +1,35 @@
 /* Academic portfolio — local typefaces and a deliberately small visual system. */
 :root {
   color-scheme: light;
-  --paper: #f7f6f2;
+  --paper: #f7f9fc;
   --surface: #ffffff;
-  --wash: #eeeee7;
-  --ink: #202d2b;
-  --text: #485652;
-  --muted: #66716b;
-  --accent: #17685b;
-  --accent-hover: #104d43;
-  --accent-soft: #e8efea;
-  --line: #d8ded5;
-  --strong-line: #b5c4b9;
+  --wash: #eef2f8;
+  --ink: #1e2c42;
+  --text: #45546b;
+  --muted: #5e6c82;
+  --accent: #245cb5;
+  --accent-hover: #1b458c;
+  --accent-soft: #eaf0fa;
+  --line: #d7e0ed;
+  --strong-line: #b7c8e0;
   --serif: Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 [data-theme="dark"] {
   color-scheme: dark;
-  --paper: #15201e;
-  --surface: #1b2926;
-  --wash: #202f2b;
-  --ink: #f0f2e9;
-  --text: #c0cdc6;
-  --muted: #9bad9f;
-  --accent: #96d3bd;
-  --accent-hover: #c2e8d7;
-  --accent-soft: #263e34;
-  --visual-ink: #15201e;
-  --line: #35483e;
-  --strong-line: #607a6a;
+  --paper: #111b2d;
+  --surface: #17243a;
+  --wash: #1d2c44;
+  --ink: #edf3ff;
+  --text: #bccbe1;
+  --muted: #99aecb;
+  --accent: #91baff;
+  --accent-hover: #b7d3ff;
+  --accent-soft: #1e3150;
+  --visual-ink: #111b2d;
+  --line: #30435f;
+  --strong-line: #5a7396;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
@@ -93,13 +93,13 @@ a:hover { color: var(--accent-hover); }
 .section-heading > div > .section-intro { margin-top: 12px; }
 .section-intro, .section-note { color: var(--muted); font-size: .84rem; max-width: 410px; line-height: 1.75; }
 .section-heading > .section-intro { margin-left: auto; }
-.research-list { display: grid; gap: 20px; }
-.research-card { display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 30px; }
+.research-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.research-card { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 26px; }
 .research-index { color: var(--accent); font: 400 1.65rem/1.25 var(--serif); padding-top: 1px; }
 .research-body { min-width: 0; }
 .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; color: var(--muted); font-size: .7rem; line-height: 1.6; margin-bottom: 10px; }
 .card-meta .status, .status { color: var(--accent); font-size: .69rem; background: var(--accent-soft); padding: 3px 8px; border-radius: 3px; }
-.research-card h3 { font: 400 1.5rem/1.3 var(--serif); letter-spacing: -.025em; max-width: 800px; margin-bottom: 10px; }
+.research-card h3 { font: 400 1.35rem/1.3 var(--serif); letter-spacing: -.025em; max-width: 800px; margin-bottom: 10px; }
 .research-card p { color: var(--text); font-size: .87rem; max-width: 850px; }
 .research-card .research-supervision { color: var(--muted); margin-bottom: 14px; font-size: .76rem; }
 .evidence-list { margin-top: 13px; color: var(--text); font-size: .84rem; line-height: 1.8; }
@@ -111,6 +111,15 @@ a:hover { color: var(--accent-hover); }
 .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-size: .78rem; font-weight: 600; text-decoration: none; min-height: 36px; }
 .text-link:hover { text-decoration: underline; }
 .research-body > .text-link { margin-top: 12px; }
+.research-details { margin-top: 18px; border-top: 1px solid var(--line); }
+.research-details summary { cursor: pointer; color: var(--accent); font-size: .76rem; font-weight: 600; padding: 12px 0; min-height: 44px; }
+.research-details summary:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: .22em; }
+.research-details summary::marker { color: var(--accent); }
+.research-details[open] { padding-bottom: 2px; }
+.research-details[open] summary { margin-bottom: 2px; }
+.research-details p { font-size: .76rem; line-height: 1.75; }
+.research-details p + p { margin-top: 10px; }
+.research-details p:last-child { color: var(--muted); }
 .about-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 72px; align-items: start; }
 .about-copy { color: var(--text); font-size: .92rem; }
 .about-copy p + p { margin-top: 17px; }
@@ -188,6 +197,7 @@ a:hover { color: var(--accent-hover); }
   .section { padding: 46px 0; scroll-margin-top: 72px; }
   .section-heading { gap: 15px; margin-bottom: 27px; }
   .section-heading > .section-intro { margin-left: 0; max-width: 560px; }
+  .research-list { grid-template-columns: 1fr; }
   .research-card { padding: 23px; gap: 15px; grid-template-columns: 30px minmax(0, 1fr); }
   .research-index { font-size: 1.3rem; }
   .research-card h3 { font-size: 1.3rem; }
@@ -224,7 +234,7 @@ a:hover { color: var(--accent-hover); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 @media print {
-  :root, [data-theme="dark"] { color-scheme: light; --paper: #fff; --surface: #fff; --wash: #f4f4f4; --ink: #111; --text: #333; --muted: #555; --accent: #164a3c; --accent-soft: #f4f7f4; --line: #ccc; --strong-line: #aaa; }
+  :root, [data-theme="dark"] { color-scheme: light; --paper: #fff; --surface: #fff; --wash: #f4f4f4; --ink: #111; --text: #333; --muted: #555; --accent: #1b458c; --accent-soft: #f2f5fa; --line: #ccc; --strong-line: #aaa; }
   @page { margin: 16mm; }
   body { font-size: 10pt; }
   .container { width: 100%; max-width: none; }
@@ -238,6 +248,7 @@ a:hover { color: var(--accent-hover); }
   .section-heading { margin-bottom: 18px; }
   .section-heading h2, .contact-section h2 { font-size: 21pt; }
   .research-card, .project-card, .education-card, .teaching-item, .skill-group { break-inside: avoid; }
+  .research-list { grid-template-columns: 1fr; }
   .research-card { padding: 16px; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-card { padding: 15px; }

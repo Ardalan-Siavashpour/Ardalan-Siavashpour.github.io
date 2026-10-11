@@ -1,6 +1,6 @@
-# Ardalan Siavashpour — academic website
+# Ardalan Siavashpour — personal portfolio
 
-Static academic homepage hosted on GitHub Pages. No package installation or build step is required.
+Static portfolio covering software engineering, distributed systems, machine learning, research, and teaching. Hosted on GitHub Pages; no package installation or build step is required.
 
 ## Preview
 
